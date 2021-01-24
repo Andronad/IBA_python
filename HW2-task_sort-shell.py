@@ -1,5 +1,5 @@
 '''
-Shell sort
+Select sort
 '''
 import random
 import datetime
