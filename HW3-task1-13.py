@@ -70,16 +70,19 @@ class Bus:
 
     def __str__(self):
         return ('---\nАвтобус модели ' + self.__brand + ' c номерными знаками ' + str(self.__busNumber) + '\n' +
-                'Ввелся в эксплуатацию в ' + str(self.__yearOfUsingBegin) + ' на маршрут ' + str(self.__routeNumber) + '\n' +
+                'Ввелся в эксплуатацию в ' + str(self.__yearOfUsingBegin) + ' на маршрут ' + str(
+                    self.__routeNumber) + '\n' +
                 'Пробег ' + str(self.__odometerValue) + '\n' +
-                'Водитель: ' + self.__fioDriver+'\n---')
+                'Водитель: ' + self.__fioDriver + '\n---')
 
 
 def get_busesForRoute(A, route):
     return list(filter(lambda x: x.get_routeNumber() == route, A))
 
+
 def get_busesWithSettedAgeOrMore(A, age):
     return list(filter(lambda x: x.get_busAge() > age, A))
+
 
 A = [Bus('Иванов А.А', '1234XX7', 34, 'BMW', 2013, 10000),
      Bus('Петров К.А', '1512HI7', 34, 'BMW', 2019, 100),
@@ -98,5 +101,3 @@ A2 = get_busesWithSettedAgeOrMore(A, age)
 print('Автобусы с возрастом более', age)
 for i in range(len(A2)):
     print(A2[i])
-
-
